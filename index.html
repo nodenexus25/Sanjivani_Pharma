@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/avif" href="/images/Sanjivani Logo.avif" />
+    <link rel="apple-touch-icon" href="/images/Sanjivani Logo.avif" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Sanjivani Pharma is a professional pharmaceutical brand website for institutional buyers, showcasing products, quality positioning, and procurement contact pathways."
+    />
+    <meta name="theme-color" content="#f7fafc" />
+    <title>Sanjivani Pharma</title>
+    <script type="module">
+      if (import.meta.hot?.on) {
+        import.meta.hot.on('vite:error', (error) => {
+          if (error.err) {
+            console.error(
+              [error.err.message, error.err.frame].filter(Boolean).join('\n'),
+            )
+          }
+        })
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
