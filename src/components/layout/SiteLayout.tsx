@@ -20,7 +20,7 @@ export function SiteLayout({ children }: SiteLayoutProps) {
   return (
     <div className="min-h-screen bg-canvas text-ink">
       <div className="absolute inset-x-0 top-0 -z-10 h-[36rem] bg-[radial-gradient(circle_at_top,_rgba(183,220,235,0.6),_transparent_62%)]" />
-      <header className="sticky top-0 z-30 border-b border-line/80 bg-canvas/95 backdrop-blur-xl">
+      <header className="sticky top-0 z-30 border-b border-white/10 bg-[linear-gradient(110deg,#08273b_0%,#0a3650_42%,#146b86_100%)] text-white shadow-[0_12px_28px_-18px_rgba(8,39,59,0.6)]">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-[0.40625rem] sm:px-6 lg:relative lg:px-8">
           <Link to="/" className="flex items-center gap-4">
             <img
@@ -29,7 +29,7 @@ export function SiteLayout({ children }: SiteLayoutProps) {
               className="h-24 w-24 object-contain sm:h-28 sm:w-28"
             />
             <div>
-              <p className="text-lg font-semibold tracking-tight text-brand-950 sm:text-xl">{siteMeta.name}</p>
+              <p className="text-lg font-semibold tracking-tight text-white sm:text-xl">{siteMeta.name}</p>
             </div>
           </Link>
 
@@ -40,8 +40,8 @@ export function SiteLayout({ children }: SiteLayoutProps) {
                 to={link.href}
                 className={({ isActive }) =>
                   cn(
-                    "text-sm font-medium text-muted transition hover:text-brand-800",
-                    isActive && "text-brand-900",
+                    "text-sm font-medium text-brand-100 transition hover:text-white",
+                    isActive && "text-white",
                   )
                 }
               >
@@ -50,7 +50,12 @@ export function SiteLayout({ children }: SiteLayoutProps) {
             ))}
           </nav>
 
-          <div className="hidden lg:block">
+          <div className="hidden items-center gap-4 lg:flex">
+            <img
+              src={siteMeta.groupLogoImage}
+              alt="Sanjivani Group logo"
+              className="h-24 w-24 object-contain sm:h-28 sm:w-28"
+            />
             <Link
               to="/contact"
               className="inline-flex items-center gap-2 rounded-full bg-accent-500 px-4 py-2 text-sm font-medium text-white transition hover:bg-accent-600"
@@ -60,19 +65,26 @@ export function SiteLayout({ children }: SiteLayoutProps) {
             </Link>
           </div>
 
-          <button
-            type="button"
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-line bg-surface text-brand-900 lg:hidden"
-            onClick={() => setIsOpen((value) => !value)}
-            aria-label="Toggle navigation"
-            aria-expanded={isOpen}
-          >
-            {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-          </button>
+          <div className="flex items-center gap-3 lg:hidden">
+            <img
+              src={siteMeta.groupLogoImage}
+              alt="Sanjivani Group logo"
+              className="h-16 w-16 object-contain sm:h-20 sm:w-20"
+            />
+            <button
+              type="button"
+              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/8 text-white hover:bg-white/15"
+              onClick={() => setIsOpen((value) => !value)}
+              aria-label="Toggle navigation"
+              aria-expanded={isOpen}
+            >
+              {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            </button>
+          </div>
         </div>
 
         {isOpen ? (
-          <div className="border-t border-line bg-surface px-4 py-4 lg:hidden">
+          <div className="border-t border-white/10 bg-[rgba(8,39,59,0.98)] px-4 py-4 lg:hidden">
             <div className="mx-auto flex max-w-7xl flex-col gap-3">
               {navigationLinks.map((link) => (
                 <NavLink
@@ -80,8 +92,8 @@ export function SiteLayout({ children }: SiteLayoutProps) {
                   to={link.href}
                   className={({ isActive }) =>
                     cn(
-                      "rounded-2xl px-4 py-3 text-sm font-medium text-muted transition hover:bg-brand-50 hover:text-brand-900",
-                      isActive && "bg-brand-50 text-brand-900",
+                      "rounded-2xl px-4 py-3 text-sm font-medium text-brand-100 transition hover:bg-white/10 hover:text-white",
+                      isActive && "bg-white/10 text-white",
                     )
                   }
                 >

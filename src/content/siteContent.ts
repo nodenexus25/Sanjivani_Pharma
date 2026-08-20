@@ -34,6 +34,7 @@ export const siteMeta = {
   name: "Sanjivani Pharma",
   tagline: "Pure Protection, Every Drop.",
   logoImage: "/images/Sanjivani Logo.avif",
+  groupLogoImage: "/images/SANJIVANI GROUP LOGO - JAN 2023.png",
   parent:
     "Manufactured by Sahkar Maharshi Shankarrao Kolhe Sahkari Sakhar Karkhana, Kopargaon.",
   description:
@@ -44,6 +45,9 @@ export const siteMeta = {
     "interior of a clean pharmaceutical research and development plant, stainless equipment, bright natural and studio light mix, realistic corporate website photography, India, no text, no watermark",
     "landscape_16_9",
   ),
+  founderImage: "/images/founder image.png",
+  founderName: "Sahkar Maharshi Shankarrao Kolhe",
+  founderTitle: "Founder, The Sanjivani (Takli) Sahakari Sakhar Karkhana",
 };
 
 export const navigationLinks = [
@@ -146,10 +150,7 @@ export const products: ProductContent[] = [
       { label: "Blister Pack", packSize: "To be confirmed", note: "Retail-ready format if approved for public display." },
       { label: "Institutional Supply", packSize: "To be confirmed", note: "For hospital and distributor enquiry workflows." },
     ],
-    image: createImageUrl(
-      "professional pharmaceutical product photography of a paracetamol tablet blister pack and carton, teal and white clinical branding style, realistic studio light, clean background, no text, no watermark",
-      "portrait_4_3",
-    ),
+    image: "/images/products/sanitizer/paracetamol.png",
   },
 ];
 
